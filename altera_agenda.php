@@ -6,8 +6,9 @@ $id = $_GET['id'];
 $sql = "SELECT * FROM agenda WHERE id = $id";
 $result = $conn->query($sql);
 
+
 if ($result->num_rows > 0) {
-    $row = $result->fetch_assoc();
+    $row = $result-> fetch_assoc();
     $nome = $row['nome'];
     $telefone = $row['telefone'];
 
@@ -20,8 +21,12 @@ if ($result->num_rows > 0) {
         <input type="text" name="telefone" id="telefone" value="' . $telefone . '" required><br><br>
         <input type="submit" value="Salvar">
     </form>';
-} else {
+} 
+
+else {
     echo "Registro não encontrado.";
 }
+
 $conn->close();
+
 ?>

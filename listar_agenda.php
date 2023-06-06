@@ -8,8 +8,10 @@ if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
         echo "Nome: " . $row['nome'] . " - Telefone: " . $row['telefone'] . "<br>";
     }
-} else {
+} 
+else {
     echo "Nenhum registro encontrado.";
 }
+
 $conn->close();
 ?>
