@@ -1,14 +1,15 @@
 <?php
-$servername = "localhost";
+
+$hostname = "localhost";
 $username = "root";
 $password = "";
-$database = "Lista5";
-
-// Cria a conexão com o banco de dados
-$conn = new mysqli($servername, $username, $password, $database);
-
-// Verifica a conexão
-if ($conn->connect_error) {
-    die("Falha na conexão com o banco de dados: " . $conn->connect_error);
+$database = "projeto6";
+$port = 3307;
+$con = mysqli_connect($hostname, $username, $password, $database, $port);
+if(mysqli_connect_errno()){
+    printf("Erro conexão: %s\n",
+    mysqli_connect_error());
+    exit();
 }
+
 ?>
